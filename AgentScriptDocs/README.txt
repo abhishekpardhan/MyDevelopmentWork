@@ -13,7 +13,7 @@ https://developer.salesforce.com/docs/ai/agentforce/guide/agent-script.html
 
 -> Have feedback? Click **Share Your Feedback** on the doc page. We do read your feedback :-)
 
-Agent Script Release Notes:
+Agent Script Release Notes:-
 ==========================
 
 https://help.salesforce.com/s/articleView?id=release-notes.rn_agentforce_script_new_changed.htm
