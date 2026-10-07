@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>67.0</apiVersion>
+    <assignments>
+        <name>Assign_Existing_LeadId</name><label>Assign Existing LeadId</label><locationX>50</locationX><locationY>450</locationY>
+        <assignmentItems><assignToReference>leadRecordId</assignToReference><operator>Assign</operator><value><elementReference>Get_Existing_Lead.Id</elementReference></value></assignmentItems>
+    </assignments>
+    <assignments>
+        <name>Clear_LeadId_On_Fault</name><label>Clear LeadId On Fault</label><locationX>500</locationX><locationY>550</locationY>
+        <assignmentItems><assignToReference>leadRecordId</assignToReference><operator>Assign</operator><value><stringValue></stringValue></value></assignmentItems>
+    </assignments>
+    <decisions>
+        <name>Required_Fields_Present</name><label>Required Fields Present?</label><locationX>250</locationX><locationY>150</locationY>
+        <defaultConnector><targetReference>Clear_LeadId_On_Fault</targetReference></defaultConnector><defaultConnectorLabel>Missing Details</defaultConnectorLabel>
+        <rules><name>All_Fields_Present</name><conditionLogic>and</conditionLogic>
+            <conditions><leftValueReference>Has_All_Required_Fields</leftValueReference><operator>EqualTo</operator><rightValue><booleanValue>true</booleanValue></rightValue></conditions>
+            <connector><targetReference>Get_Existing_Lead</targetReference></connector><label>All Fields Present</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Lead_Exists</name><label>Lead Exists?</label><locationX>250</locationX><locationY>350</locationY>
+        <defaultConnector><targetReference>Create_Lead</targetReference></defaultConnector><defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules><name>Yes_Reuse</name><conditionLogic>and</conditionLogic>
+            <conditions><leftValueReference>Get_Existing_Lead.Id</leftValueReference><operator>IsNull</operator><rightValue><booleanValue>false</booleanValue></rightValue></conditions>
+            <connector><targetReference>Assign_Existing_LeadId</targetReference></connector><label>Yes</label>
+        </rules>
+    </decisions>
+    <description>Agent action: validate five required inputs, reuse a visible Lead by email and company or create one. Return empty ID on lookup or creation failure.</description>
+    <environments>Default</environments>
+    <formulas><name>Has_All_Required_Fields</name><dataType>Boolean</dataType><expression>AND(NOT(ISBLANK(TRIM({!Company}))), NOT(ISBLANK(TRIM({!Email}))), NOT(ISBLANK(TRIM({!FirstName}))), NOT(ISBLANK(TRIM({!LastName}))), NOT(ISBLANK(TRIM({!Phone}))))</expression></formulas>
+    <interviewLabel>Create Lead by Field {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Create Lead by Field</label>
+    <processMetadataValues><name>BuilderType</name><value><stringValue>LightningFlowBuilder</stringValue></value></processMetadataValues>
+    <processMetadataValues><name>CanvasMode</name><value><stringValue>AUTO_LAYOUT_CANVAS</stringValue></value></processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordCreates>
+        <name>Create_Lead</name><label>Create Lead</label><locationX>350</locationX><locationY>450</locationY>
+        <faultConnector><targetReference>Clear_LeadId_On_Fault</targetReference></faultConnector>
+        <assignRecordIdToReference>leadRecordId</assignRecordIdToReference>
+        <inputAssignments><field>Company</field><value><elementReference>Company</elementReference></value></inputAssignments>
+        <inputAssignments><field>Email</field><value><elementReference>Email</elementReference></value></inputAssignments>
+        <inputAssignments><field>FirstName</field><value><elementReference>FirstName</elementReference></value></inputAssignments>
+        <inputAssignments><field>LastName</field><value><elementReference>LastName</elementReference></value></inputAssignments>
+        <inputAssignments><field>Phone</field><value><elementReference>Phone</elementReference></value></inputAssignments>
+        <inputAssignments><field>LeadSource</field><value><stringValue>LeadExampleAgent</stringValue></value></inputAssignments>
+        <object>Lead</object><storeOutputAutomatically>false</storeOutputAutomatically>
+    </recordCreates>
+    <recordLookups>
+        <name>Get_Existing_Lead</name><label>Get Existing Lead</label><locationX>250</locationX><locationY>250</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector><targetReference>Lead_Exists</targetReference></connector>
+        <faultConnector><targetReference>Clear_LeadId_On_Fault</targetReference></faultConnector>
+        <filterLogic>and</filterLogic>
+        <filters><field>Email</field><operator>EqualTo</operator><value><elementReference>Email</elementReference></value></filters>
+        <filters><field>Company</field><operator>EqualTo</operator><value><elementReference>Company</elementReference></value></filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly><object>Lead</object><queriedFields>Id</queriedFields><storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <runInMode>DefaultMode</runInMode>
+    <start><locationX>250</locationX><locationY>50</locationY><connector><targetReference>Required_Fields_Present</targetReference></connector></start>
+    <status>Active</status>
+    <variables><name>Company</name><dataType>String</dataType><isCollection>false</isCollection><isInput>true</isInput><isOutput>false</isOutput></variables>
+    <variables><name>Email</name><dataType>String</dataType><isCollection>false</isCollection><isInput>true</isInput><isOutput>false</isOutput></variables>
+    <variables><name>FirstName</name><dataType>String</dataType><isCollection>false</isCollection><isInput>true</isInput><isOutput>false</isOutput></variables>
+    <variables><name>LastName</name><dataType>String</dataType><isCollection>false</isCollection><isInput>true</isInput><isOutput>false</isOutput></variables>
+    <variables><name>Phone</name><dataType>String</dataType><isCollection>false</isCollection><isInput>true</isInput><isOutput>false</isOutput></variables>
+    <variables><name>leadRecordId</name><dataType>String</dataType><isCollection>false</isCollection><isInput>false</isInput><isOutput>true</isOutput><value><stringValue></stringValue></value></variables>
+</Flow>
+

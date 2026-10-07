@@ -1,0 +1,31 @@
+Product Troubleshooting
+
+Question: My DiamondVision TV shows a "No Signal" message even though my cable box is on. How do I fix it?
+Answer: Verify the HDMI cable is firmly seated at both ends and try a different HDMI port on the TV (the DiamondVision has four HDMI 2.1 ports labeled 1â€“4). Press the Source button on your remote and manually select the correct input. If the message persists, swap in a known-good HDMI cable â€” worn or damaged cables are the most common cause.
+
+Question: The picture on my DiamondVision TV keeps flickering or dimming randomly. What's happening?
+Answer: This is often caused by the "AmbientAdapt" feature adjusting brightness to room lighting. Disable it under Settings > Picture > AmbientAdapt. If flickering continues, check that no other high-power appliances share the same outlet, and confirm the power cable isn't loose. Persistent flickering across all inputs may indicate a failing backlight â€” contact Acme Support.
+
+Question: I hear audio but the DiamondVision screen stays completely black. What should I try?
+Answer: Shine a flashlight at an angle against the screen â€” if you can faintly see the image, the backlight has failed and the TV needs service. If the screen is truly dark, unplug the TV for 60 seconds to power cycle it, then try a different input source. Also confirm "Screen Off" mode wasn't accidentally enabled under Settings > Picture.
+
+Question: My DiamondVision TV keeps disconnecting from Wi-Fi. How do I stabilize the connection?
+Answer: Move the router within 25 feet of the TV and away from microwaves or cordless phones that can cause interference. In Settings > Network > Advanced, switch from "Auto" to the 5GHz band for a more stable signal. If issues persist, forget the network, restart both the router and TV, then reconnect. A wired Ethernet connection is the most reliable option for streaming 4K content.
+
+Question: The DiamondVision Voice Remote isn't responding to voice commands. What's wrong?
+Answer: Make sure the remote is paired (hold Home + Back for 5 seconds until the blue LED flashes). Voice commands require an active internet connection, so verify the TV is online. Check that the microphone permission is enabled under Settings > Voice Assistant > Permissions, and replace the AAA batteries if the remote's LED is dim or unresponsive.
+
+Question: Colors on my DiamondVision look washed out or unnatural. How do I fix them?
+Answer: Reset the picture settings via Settings > Picture > Reset to Default, then select a preset that matches your content â€” "Cinema" for movies, "Sport" for live events, or "Standard" for mixed use. Disable "Vivid Boost" if colors appear oversaturated. For accurate calibration, use the built-in test patterns under Settings > Picture > Expert Calibration.
+
+Question: There's a horizontal or vertical line across my DiamondVision screen. Can I fix it myself?
+Answer: Unfortunately, lines across the screen usually indicate a damaged or failing LCD panel, which cannot be repaired at home. First, rule out an input issue by testing with a different HDMI source and running the built-in Panel Test under Settings > Support > Self Diagnosis. If the line appears during the diagnostic, the TV requires warranty service.
+
+Question: My DiamondVision TV is slow to respond and apps take forever to open. What can I do?
+Answer: Clear the app cache under Settings > Apps > Manage Apps > Clear Cache, and uninstall any apps you don't use. Ensure the TV has the latest firmware (Settings > System > Software Update). If sluggishness continues, perform a factory reset (Settings > System > Reset) â€” this often resolves memory-related slowdowns on TVs used heavily for over a year.
+
+Question: Why does my DiamondVision TV turn on or off by itself?
+Answer: Check Settings > System > Timers and disable any active Sleep Timer or On Timer. Also disable "HDMI-CEC" (called "DiamondLink" in the menu) if a connected device like a soundbar or console might be sending power commands. If the TV still cycles on its own, another remote in the household may be on the same code â€” try re-pairing your DiamondVision remote.
+
+Question: My DiamondVision TV's sound is out of sync with the picture. How do I fix lip-sync issues?
+Answer: Navigate to Settings > Sound > Audio Delay (Lip Sync) and adjust the slider until dialog matches on-screen mouth movements â€” typical values range from 20 to 80 ms. If you're using an external soundbar, also check its own delay setting. Enabling "Auto Lip Sync" under the same menu resolves the issue automatically on most HDMI-CEC compatible devices.

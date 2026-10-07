@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Minimum Lead Read/Create and Flow access for Lead Gather Example.</description>
+    <fieldPermissions><editable>true</editable><field>Lead.Email</field><readable>true</readable></fieldPermissions>
+    <fieldPermissions><editable>true</editable><field>Lead.Phone</field><readable>true</readable></fieldPermissions>
+    <fieldPermissions><editable>true</editable><field>Lead.LeadSource</field><readable>true</readable></fieldPermissions>
+    <flowAccesses><enabled>true</enabled><flow>Create_Lead_by_Field</flow></flowAccesses>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Lead Gather Example Access</label>
+    <objectPermissions><allowCreate>true</allowCreate><allowDelete>false</allowDelete><allowEdit>false</allowEdit><allowRead>true</allowRead><modifyAllRecords>false</modifyAllRecords><object>Lead</object><viewAllRecords>false</viewAllRecords></objectPermissions>
+</PermissionSet>
+

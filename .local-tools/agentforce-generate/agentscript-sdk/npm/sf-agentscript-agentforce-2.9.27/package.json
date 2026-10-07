@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "@sf-agentscript/agentforce": "^2.9.27"
+  }
+}

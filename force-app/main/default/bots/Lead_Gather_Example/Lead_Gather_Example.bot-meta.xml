@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bot xmlns="http://soap.sforce.com/2006/04/metadata">
+    <agentDSLEnabled>true</agentDSLEnabled>
+    <agentType>EinsteinServiceAgent</agentType>
+    <botMlDomain>
+        <label>Lead Gather Example</label>
+        <name>Lead_Gather_Example</name>
+    </botMlDomain>
+    <botSource>None</botSource>
+    <botUser>agentforce_service_agent@00dgk00000bv4td853114362.ext</botUser>
+    <description>Collects five prospect details across turns and creates or reuses one Lead per conversation.</description>
+    <label>Lead Gather Example</label>
+    <logPrivateConversationData>false</logPrivateConversationData>
+    <richContentEnabled>true</richContentEnabled>
+    <sessionTimeout>0</sessionTimeout>
+    <type>ExternalCopilot</type>
+</Bot>

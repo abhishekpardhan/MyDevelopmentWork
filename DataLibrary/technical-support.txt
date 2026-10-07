@@ -1,0 +1,31 @@
+Technical Support
+
+Question: How do I contact Acme Corp technical support for my DiamondVision TV?
+Answer: You can reach Acme Corp technical support by calling 1-800-555-ACME (available 24/7), emailing support@acmecorp.example.com, or starting a live chat at acmecorp.example.com/support. For faster service, have your product model number and serial number ready before contacting us.
+
+Question: What information should I have ready before contacting technical support?
+Answer: Please have the following information available: your product model number, serial number, date and place of purchase, a description of the issue including any error messages, the steps you have already taken to resolve the problem, and your Acme Corp account email if applicable. This helps our agents diagnose and resolve your issue quickly.
+
+Question: Where can I find the serial number and model number on my Acme Corp product?
+Answer: The serial number and model number are typically printed on a label affixed to the back or bottom of the product. You can also find this information in your original packaging, on your purchase receipt, or within the Acme Corp companion app under Device Details if the product is registered.
+
+Question: What are Acme Corp technical support hours?
+Answer: Phone support is available 24 hours a day, 7 days a week, including holidays. Live chat is available from 6 AM to 11 PM Pacific Time daily. Email inquiries are answered within one business day, and community forum moderators respond Monday through Friday during standard business hours.
+
+Question: Is technical support free, or are there fees involved?
+Answer: Standard technical support is free for all Acme Corp products within the warranty period. Out-of-warranty support may incur a per-incident fee of $29.99 or a flat annual service plan fee. Premium support subscriptions with priority routing and in-home service are also available for an additional cost.
+
+Question: How do I register my Acme Corp product to receive support?
+Answer: Register your product at acmecorp.example/register or through the Acme Corp companion app. You will need to provide the model number, serial number, purchase date, and retailer information. Registration is not required to receive support but does speed up warranty verification and enables proactive service notifications.
+
+Question: What languages does Acme Corp technical support offer?
+Answer: Acme Corp offers technical support in English, Spanish, French, German, Japanese, Mandarin, and Portuguese. When calling, select your preferred language from the automated menu. Live chat and email support are also available in these languages during standard support hours.
+
+Question: How can I check the status of an existing support case?
+Answer: Sign in to your Acme Corp account at acmecorp.example and navigate to My Support Cases to view real-time status, agent notes, and estimated resolution times. You can also reference your case number when calling or emailing to receive an update from any support agent.
+
+Question: What should I do if my issue is not resolved after contacting support?
+Answer: If your issue is not resolved on the first contact, request that your case be escalated to a senior support specialist or a supervisor. You can also reply to your case email with additional details or call back and reference your case number. Unresolved warranty issues can be escalated to the Customer Advocacy team at advocacy@acmecorp.example.com.
+
+Question: Does Acme Corp offer remote diagnostic or in-home repair services?
+Answer: Yes, Acme Corp offers remote diagnostic sessions for connected products, allowing a technician to inspect device logs and settings with your permission. In-home repair services are available in select regions for eligible products under warranty or with a premium service plan. Schedule either option through the support portal or by contacting an agent.

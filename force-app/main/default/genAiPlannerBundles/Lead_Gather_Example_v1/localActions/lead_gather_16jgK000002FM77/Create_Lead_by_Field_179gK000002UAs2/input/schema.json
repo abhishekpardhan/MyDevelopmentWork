@@ -1,0 +1,42 @@
+{
+  "required" : [ "Company", "Email", "FirstName", "LastName", "Phone" ],
+  "unevaluatedProperties" : false,
+  "properties" : {
+    "Company" : {
+      "title" : "Company",
+      "description" : "The prospect's company name.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "Email" : {
+      "title" : "Email",
+      "description" : "The prospect's email address.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "FirstName" : {
+      "title" : "First Name",
+      "description" : "The prospect's first name.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "LastName" : {
+      "title" : "Last Name",
+      "description" : "The prospect's last name.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "Phone" : {
+      "title" : "Phone",
+      "description" : "The prospect's phone number.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    }
+  },
+  "lightning:type" : "lightning__objectType"
+}
