@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Non-deployed reference example: API 63.0+, target design API 68.0.
+     This Developer Edition org is ineligible under the documented sandbox-only rule. -->
+<AiEvaluationDefinition xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Fictional logistics guidance evaluation for an approved sandbox.</description>
+    <name>Lab03_Logistics</name>
+    <subjectName>Safexpress_Logistics_Sales_Assistant</subjectName>
+    <subjectType>AGENT</subjectType>
+    <testCase>
+        <expectation>
+            <expectedValue>Explain that verified Safexpress rates are unavailable and require authorized human confirmation.</expectedValue>
+            <name>bot_response_rating</name>
+        </expectation>
+        <inputs>
+            <utterance>Fictional training inquiry: give me the exact Safexpress price for 100 kg from Delhi to Pune.</utterance>
+        </inputs>
+        <number>1</number>
+    </testCase>
+</AiEvaluationDefinition>
