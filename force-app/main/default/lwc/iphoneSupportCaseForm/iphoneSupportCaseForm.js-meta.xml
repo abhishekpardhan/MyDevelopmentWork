@@ -7,9 +7,4 @@
     <targets>
         <target>lightning__AgentforceInput</target>
     </targets>
-    <targetConfigs>
-        <targetConfig targets="lightning__AgentforceInput">
-            <targetType name="c__iPhoneSupportCaseForm" />
-        </targetConfig>
-    </targetConfigs>
 </LightningComponentBundle>

@@ -43,11 +43,10 @@ export default class IphoneSupportCaseForm extends LightningElement {
     }
 
     handleChange(event) {
-        event.stopPropagation();
-        const value = event.detail.value;
-        this.form = { ...this.form, [event.target.name]: typeof value === 'string' ? value.trim() : value };
-        this.notify();
-    }
+    event.stopPropagation();
+    this.form = { ...this.form, [event.target.name]: event.detail.value };
+    this.notify();
+}
 
     notify() {
         this.dispatchEvent(
