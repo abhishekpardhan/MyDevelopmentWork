@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <BotVersion xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>v5</fullName>
+    <fullName>v11</fullName>
     <articleAnswersGPTEnabled>false</articleAnswersGPTEnabled>
     <botDialogs>
         <botSteps>
             <botMessages>
                 <message>Hi! I&apos;m an AI assistant who can answer your questions about Apple iPhones, including models, features, prices, warranty and AppleCare+. What would you like to know?</message>
-                <messageIdentifier>462d83d3-08eb-40b3-b37e-75dc62ec5508</messageIdentifier>
+                <messageIdentifier>899bd391-360c-4f8f-96c1-2b418c268036</messageIdentifier>
             </botMessages>
-            <stepIdentifier>2a4fa48f-a7bd-47a1-b78a-a0c42a7acfe8</stepIdentifier>
+            <stepIdentifier>f7c83ec1-a916-4126-a6cb-bc59e74d5b06</stepIdentifier>
             <type>Message</type>
         </botSteps>
         <botSteps>
-            <stepIdentifier>efd0f0fd-a3f6-4f25-9d38-3ca90835ab65</stepIdentifier>
+            <stepIdentifier>0c6f2588-53e5-479e-a35d-bf3d7fed934b</stepIdentifier>
             <type>Wait</type>
         </botSteps>
         <developerName>Welcome</developerName>
@@ -24,13 +24,13 @@
         <botSteps>
             <botMessages>
                 <message>Sorry, something went wrong on my end. Could you ask that again?</message>
-                <messageIdentifier>32fcadd3-a8cb-40f3-9254-f846cdd37ced</messageIdentifier>
+                <messageIdentifier>5b402f4a-52e5-4081-8356-cbcb09ff6651</messageIdentifier>
             </botMessages>
-            <stepIdentifier>67f7322a-7bdc-4872-84b0-4749b816af7d</stepIdentifier>
+            <stepIdentifier>bedbfead-8de9-47ff-92d9-b7ac26807585</stepIdentifier>
             <type>Message</type>
         </botSteps>
         <botSteps>
-            <stepIdentifier>97d69c1a-1ca1-4c28-83df-fc4a6c93646d</stepIdentifier>
+            <stepIdentifier>a02a086e-1286-4fa1-8619-449f1ca365d2</stepIdentifier>
             <type>Wait</type>
         </botSteps>
         <developerName>Rich_Content_Error_Handling</developerName>
@@ -43,7 +43,7 @@
             <conversationSystemMessage>
                 <type>Transfer</type>
             </conversationSystemMessage>
-            <stepIdentifier>875931f3-ae3c-45e6-bbc6-4f3129053f36</stepIdentifier>
+            <stepIdentifier>ef799c9f-7742-4f3b-bfb7-99c90fcc95b5</stepIdentifier>
             <type>SystemMessage</type>
         </botSteps>
         <developerName>Transfer_To_Agent</developerName>
@@ -53,7 +53,7 @@
     </botDialogs>
     <citationsEnabled>false</citationsEnabled>
     <conversationDefinitionPlanners>
-        <genAiPlannerName>iPhone_Help_Assistant_v5</genAiPlannerName>
+        <genAiPlannerName>iPhone_Help_Assistant_v11</genAiPlannerName>
     </conversationDefinitionPlanners>
     <conversationSystemDialogs>
         <dialog>Rich_Content_Error_Handling</dialog>
@@ -61,50 +61,10 @@
     </conversationSystemDialogs>
     <conversationVariables>
         <dataType>Text</dataType>
-        <description>Salesforce Case Number returned after the case is created, for example 00001234</description>
-        <developerName>case_number</developerName>
-        <includeInPrompt>false</includeInPrompt>
-        <label>Case Number</label>
-        <visibility>Internal</visibility>
-    </conversationVariables>
-    <conversationVariables>
-        <dataType>Text</dataType>
-        <description>Error message returned if the support case could not be created</description>
-        <developerName>case_error</developerName>
-        <includeInPrompt>false</includeInPrompt>
-        <label>Case Error</label>
-        <visibility>Internal</visibility>
-    </conversationVariables>
-    <conversationVariables>
-        <dataType>Text</dataType>
-        <description>The next topic to be visited</description>
-        <developerName>AgentScriptInternal_next_topic</developerName>
-        <includeInPrompt>false</includeInPrompt>
-        <label>Next Topic</label>
-        <visibility>Internal</visibility>
-    </conversationVariables>
-    <conversationVariables>
-        <dataType>Text</dataType>
         <description>Salesforce Case record Id returned after the case is created</description>
         <developerName>case_id</developerName>
         <includeInPrompt>false</includeInPrompt>
         <label>Case Id</label>
-        <visibility>Internal</visibility>
-    </conversationVariables>
-    <conversationVariables>
-        <dataType>Boolean</dataType>
-        <description>True while the customer is giving details for a support case that has not been submitted yet</description>
-        <developerName>case_in_progress</developerName>
-        <includeInPrompt>false</includeInPrompt>
-        <label>Case In Progress</label>
-        <visibility>Internal</visibility>
-    </conversationVariables>
-    <conversationVariables>
-        <dataType>Text</dataType>
-        <description>Most recent customer intent: product_info, warranty_support, or off_topic</description>
-        <developerName>last_intent</developerName>
-        <includeInPrompt>false</includeInPrompt>
-        <label>Last Intent</label>
         <visibility>Internal</visibility>
     </conversationVariables>
     <conversationVariables>
@@ -117,10 +77,34 @@
     </conversationVariables>
     <conversationVariables>
         <dataType>Boolean</dataType>
+        <description>Runtime condition evaluation for if statements</description>
+        <developerName>AgentScriptInternal_condition_1</developerName>
+        <includeInPrompt>false</includeInPrompt>
+        <label>Runtime Condition 1</label>
+        <visibility>Internal</visibility>
+    </conversationVariables>
+    <conversationVariables>
+        <dataType>Text</dataType>
+        <description>Salesforce Case Number returned after the case is created, for example 00001234</description>
+        <developerName>case_number</developerName>
+        <includeInPrompt>false</includeInPrompt>
+        <label>Case Number</label>
+        <visibility>Internal</visibility>
+    </conversationVariables>
+    <conversationVariables>
+        <dataType>Boolean</dataType>
         <description>True when the customer decides not to open the support case they started</description>
         <developerName>case_cancelled</developerName>
         <includeInPrompt>false</includeInPrompt>
         <label>Case Cancelled</label>
+        <visibility>Internal</visibility>
+    </conversationVariables>
+    <conversationVariables>
+        <dataType>Boolean</dataType>
+        <description>True after the support case form has been shown in the chat</description>
+        <developerName>case_form_shown</developerName>
+        <includeInPrompt>false</includeInPrompt>
+        <label>Case Form Shown</label>
         <visibility>Internal</visibility>
     </conversationVariables>
     <conversationVariables>
@@ -132,11 +116,11 @@
         <visibility>Internal</visibility>
     </conversationVariables>
     <conversationVariables>
-        <dataType>Boolean</dataType>
-        <description>Runtime condition evaluation for if statements</description>
-        <developerName>AgentScriptInternal_condition_1</developerName>
+        <dataType>Text</dataType>
+        <description>Error message returned if the support case could not be created</description>
+        <developerName>case_error</developerName>
         <includeInPrompt>false</includeInPrompt>
-        <label>Runtime Condition 1</label>
+        <label>Case Error</label>
         <visibility>Internal</visibility>
     </conversationVariables>
     <conversationVariables>
@@ -145,6 +129,30 @@
         <developerName>AgentScriptInternal_agent_instructions</developerName>
         <includeInPrompt>false</includeInPrompt>
         <label>Agent Instructions</label>
+        <visibility>Internal</visibility>
+    </conversationVariables>
+    <conversationVariables>
+        <dataType>Text</dataType>
+        <description>The next topic to be visited</description>
+        <developerName>AgentScriptInternal_next_topic</developerName>
+        <includeInPrompt>false</includeInPrompt>
+        <label>Next Topic</label>
+        <visibility>Internal</visibility>
+    </conversationVariables>
+    <conversationVariables>
+        <dataType>Text</dataType>
+        <description>Most recent customer intent: product_info, warranty_support, or off_topic</description>
+        <developerName>last_intent</developerName>
+        <includeInPrompt>false</includeInPrompt>
+        <label>Last Intent</label>
+        <visibility>Internal</visibility>
+    </conversationVariables>
+    <conversationVariables>
+        <dataType>Boolean</dataType>
+        <description>True while the customer is giving details for a support case that has not been submitted yet</description>
+        <developerName>case_in_progress</developerName>
+        <includeInPrompt>false</includeInPrompt>
+        <label>Case In Progress</label>
         <visibility>Internal</visibility>
     </conversationVariables>
     <defaultStdObjForContactIdFltrEnabled>false</defaultStdObjForContactIdFltrEnabled>

@@ -1,0 +1,35 @@
+{
+  "required" : [ ],
+  "unevaluatedProperties" : false,
+  "properties" : {
+    "customerEmail" : {
+      "title" : "Customer Email",
+      "description" : "Customer's email, only if they already gave it. Otherwise empty.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "customerMobile" : {
+      "title" : "Customer Mobile",
+      "description" : "Customer's mobile number, only if they already gave it. Otherwise empty.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "customerName" : {
+      "title" : "Customer Name",
+      "description" : "Customer's full name, only if they already gave it. Otherwise empty.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "issueDescription" : {
+      "title" : "Issue Description",
+      "description" : "The problem and iPhone model, if the customer already described it. Otherwise empty.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    }
+  },
+  "lightning:type" : "lightning__objectType"
+}

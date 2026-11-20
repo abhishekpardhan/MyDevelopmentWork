@@ -1,0 +1,14 @@
+{
+  "unevaluatedProperties" : false,
+  "properties" : {
+    "caseForm" : {
+      "title" : "Case Form",
+      "description" : "The support case form shown to the customer",
+      "lightning:type" : "c__iPhoneSupportCaseFormView",
+      "lightning:isPII" : false,
+      "copilotAction:isDisplayable" : true,
+      "copilotAction:isUsedByPlanner" : true
+    }
+  },
+  "lightning:type" : "lightning__objectType"
+}

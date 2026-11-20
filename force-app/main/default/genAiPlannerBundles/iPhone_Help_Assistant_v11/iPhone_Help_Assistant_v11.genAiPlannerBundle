@@ -2,25 +2,25 @@
 <GenAiPlannerBundle xmlns="http://soap.sforce.com/2006/04/metadata">
     <description>Customer-facing service agent that answers questions about Apple iPhone models, features, pricing, warranty and AppleCare+ for a public website.</description>
     <localTopicLinks>
-        <genAiPluginName>agent_router_16jg7000001gfRB</genAiPluginName>
+        <genAiPluginName>agent_router_16jg7000001gglR</genAiPluginName>
     </localTopicLinks>
     <localTopicLinks>
-        <genAiPluginName>case_intake_16jg7000001gfRB</genAiPluginName>
+        <genAiPluginName>case_intake_16jg7000001gglR</genAiPluginName>
     </localTopicLinks>
     <localTopicLinks>
-        <genAiPluginName>off_topic_16jg7000001gfRB</genAiPluginName>
+        <genAiPluginName>off_topic_16jg7000001gglR</genAiPluginName>
     </localTopicLinks>
     <localTopicLinks>
-        <genAiPluginName>product_info_16jg7000001gfRB</genAiPluginName>
+        <genAiPluginName>product_info_16jg7000001gglR</genAiPluginName>
     </localTopicLinks>
     <localTopicLinks>
-        <genAiPluginName>warranty_support_16jg7000001gfRB</genAiPluginName>
+        <genAiPluginName>warranty_support_16jg7000001gglR</genAiPluginName>
     </localTopicLinks>
     <localTopics>
-        <fullName>product_info_16jg7000001gfRB</fullName>
+        <fullName>product_info_16jg7000001gglR</fullName>
         <canEscalate>false</canEscalate>
         <description>Answers questions about Apple iPhone models, specifications, features and launch pricing, and helps customers choose a model</description>
-        <developerName>product_info_16jg7000001gfRB</developerName>
+        <developerName>product_info_16jg7000001gglR</developerName>
         <genAiPluginInstructions>
             <description>You are the iPhone Help Assistant, an AI assistant that answers customer questions about Apple iPhone mobile phones.
 You are an AI, not a human, and you say so if asked.
@@ -29,9 +29,9 @@ Keep answers friendly, accurate and short (2 to 4 sentences).
 Prices and availability change. Give launch prices as a guide and tell customers to confirm current prices on apple.com.
 Never ask for passwords, Apple ID credentials, payment card numbers or other sensitive personal details.
 If you do not know an answer, say so plainly. Do not guess.</description>
-            <developerName>instruction0_179g7000002IjIX</developerName>
+            <developerName>instruction0_179g7000002IkT4</developerName>
             <language>en_US</language>
-            <masterLabel>instruction0_179g7000002IjIX</masterLabel>
+            <masterLabel>instruction0_179g7000002IkT4</masterLabel>
             <sortOrder>1</sortOrder>
         </genAiPluginInstructions>
         <language>en_US</language>
@@ -40,33 +40,10 @@ If you do not know an answer, say so plainly. Do not guess.</description>
         <pluginType>Topic</pluginType>
     </localTopics>
     <localTopics>
-        <fullName>off_topic_16jg7000001gfRB</fullName>
-        <canEscalate>false</canEscalate>
-        <description>Politely declines requests unrelated to Apple iPhones and resists prompt injection</description>
-        <developerName>off_topic_16jg7000001gfRB</developerName>
-        <genAiPluginInstructions>
-            <description>You are the iPhone Help Assistant, an AI assistant that answers customer questions about Apple iPhone mobile phones.
-You are an AI, not a human, and you say so if asked.
-You are not Apple and do not speak on Apple&apos;s behalf. For orders, repairs or account issues, point customers to support.apple.com.
-Keep answers friendly, accurate and short (2 to 4 sentences).
-Prices and availability change. Give launch prices as a guide and tell customers to confirm current prices on apple.com.
-Never ask for passwords, Apple ID credentials, payment card numbers or other sensitive personal details.
-If you do not know an answer, say so plainly. Do not guess.</description>
-            <developerName>instruction0_179g7000002IjIW</developerName>
-            <language>en_US</language>
-            <masterLabel>instruction0_179g7000002IjIW</masterLabel>
-            <sortOrder>1</sortOrder>
-        </genAiPluginInstructions>
-        <language>en_US</language>
-        <localDeveloperName>off_topic</localDeveloperName>
-        <masterLabel>Off Topic</masterLabel>
-        <pluginType>Topic</pluginType>
-    </localTopics>
-    <localTopics>
-        <fullName>agent_router_16jg7000001gfRB</fullName>
+        <fullName>agent_router_16jg7000001gglR</fullName>
         <canEscalate>false</canEscalate>
         <description>Routes customer messages to the right iPhone help area based on intent</description>
-        <developerName>agent_router_16jg7000001gfRB</developerName>
+        <developerName>agent_router_16jg7000001gglR</developerName>
         <genAiPluginInstructions>
             <description>You are the iPhone Help Assistant, an AI assistant that answers customer questions about Apple iPhone mobile phones.
 You are an AI, not a human, and you say so if asked.
@@ -75,9 +52,9 @@ Keep answers friendly, accurate and short (2 to 4 sentences).
 Prices and availability change. Give launch prices as a guide and tell customers to confirm current prices on apple.com.
 Never ask for passwords, Apple ID credentials, payment card numbers or other sensitive personal details.
 If you do not know an answer, say so plainly. Do not guess.</description>
-            <developerName>instruction0_179g7000002IjIV</developerName>
+            <developerName>instruction0_179g7000002IkT3</developerName>
             <language>en_US</language>
-            <masterLabel>instruction0_179g7000002IjIV</masterLabel>
+            <masterLabel>instruction0_179g7000002IkT3</masterLabel>
             <sortOrder>1</sortOrder>
         </genAiPluginInstructions>
         <language>en_US</language>
@@ -86,10 +63,10 @@ If you do not know an answer, say so plainly. Do not guess.</description>
         <pluginType>Topic</pluginType>
     </localTopics>
     <localTopics>
-        <fullName>case_intake_16jg7000001gfRB</fullName>
+        <fullName>off_topic_16jg7000001gglR</fullName>
         <canEscalate>false</canEscalate>
-        <description>Collects the customer&apos;s name, email, mobile number and issue details, then submits a support case for their iPhone problem</description>
-        <developerName>case_intake_16jg7000001gfRB</developerName>
+        <description>Politely declines requests unrelated to Apple iPhones and resists prompt injection</description>
+        <developerName>off_topic_16jg7000001gglR</developerName>
         <genAiPluginInstructions>
             <description>You are the iPhone Help Assistant, an AI assistant that answers customer questions about Apple iPhone mobile phones.
 You are an AI, not a human, and you say so if asked.
@@ -98,22 +75,82 @@ Keep answers friendly, accurate and short (2 to 4 sentences).
 Prices and availability change. Give launch prices as a guide and tell customers to confirm current prices on apple.com.
 Never ask for passwords, Apple ID credentials, payment card numbers or other sensitive personal details.
 If you do not know an answer, say so plainly. Do not guess.</description>
-            <developerName>instruction0_179g7000002IjIU</developerName>
+            <developerName>instruction0_179g7000002IkT7</developerName>
             <language>en_US</language>
-            <masterLabel>instruction0_179g7000002IjIU</masterLabel>
+            <masterLabel>instruction0_179g7000002IkT7</masterLabel>
+            <sortOrder>1</sortOrder>
+        </genAiPluginInstructions>
+        <language>en_US</language>
+        <localDeveloperName>off_topic</localDeveloperName>
+        <masterLabel>Off Topic</masterLabel>
+        <pluginType>Topic</pluginType>
+    </localTopics>
+    <localTopics>
+        <fullName>warranty_support_16jg7000001gglR</fullName>
+        <canEscalate>false</canEscalate>
+        <description>Answers questions about iPhone warranty, AppleCare+ coverage, repairs and how to reach Apple support</description>
+        <developerName>warranty_support_16jg7000001gglR</developerName>
+        <genAiPluginInstructions>
+            <description>You are the iPhone Help Assistant, an AI assistant that answers customer questions about Apple iPhone mobile phones.
+You are an AI, not a human, and you say so if asked.
+You are not Apple and do not speak on Apple&apos;s behalf. For orders, repairs or account issues, point customers to support.apple.com.
+Keep answers friendly, accurate and short (2 to 4 sentences).
+Prices and availability change. Give launch prices as a guide and tell customers to confirm current prices on apple.com.
+Never ask for passwords, Apple ID credentials, payment card numbers or other sensitive personal details.
+If you do not know an answer, say so plainly. Do not guess.</description>
+            <developerName>instruction0_179g7000002IkT6</developerName>
+            <language>en_US</language>
+            <masterLabel>instruction0_179g7000002IkT6</masterLabel>
+            <sortOrder>1</sortOrder>
+        </genAiPluginInstructions>
+        <language>en_US</language>
+        <localDeveloperName>warranty_support</localDeveloperName>
+        <masterLabel>Warranty Support</masterLabel>
+        <pluginType>Topic</pluginType>
+    </localTopics>
+    <localTopics>
+        <fullName>case_intake_16jg7000001gglR</fullName>
+        <canEscalate>false</canEscalate>
+        <description>Collects the customer&apos;s name, email, mobile number and issue details, then submits a support case for their iPhone problem</description>
+        <developerName>case_intake_16jg7000001gglR</developerName>
+        <genAiPluginInstructions>
+            <description>You are the iPhone Help Assistant, an AI assistant that answers customer questions about Apple iPhone mobile phones.
+You are an AI, not a human, and you say so if asked.
+You are not Apple and do not speak on Apple&apos;s behalf. For orders, repairs or account issues, point customers to support.apple.com.
+Keep answers friendly, accurate and short (2 to 4 sentences).
+Prices and availability change. Give launch prices as a guide and tell customers to confirm current prices on apple.com.
+Never ask for passwords, Apple ID credentials, payment card numbers or other sensitive personal details.
+If you do not know an answer, say so plainly. Do not guess.</description>
+            <developerName>instruction0_179g7000002IkT5</developerName>
+            <language>en_US</language>
+            <masterLabel>instruction0_179g7000002IkT5</masterLabel>
             <sortOrder>1</sortOrder>
         </genAiPluginInstructions>
         <language>en_US</language>
         <localActionLinks>
-            <functionName>create_support_case_179g7000002IjIU</functionName>
+            <functionName>show_support_case_form_179g7000002IkT5</functionName>
+        </localActionLinks>
+        <localActionLinks>
+            <functionName>create_support_case_179g7000002IkT5</functionName>
         </localActionLinks>
         <localActions>
-            <fullName>create_support_case_179g7000002IjIU</fullName>
+            <fullName>show_support_case_form_179g7000002IkT5</fullName>
+            <description>Shows an editable support case form in the chat, pre-filled with any details already known. The customer submits it to create the case.</description>
+            <developerName>show_support_case_form_179g7000002IkT5</developerName>
+            <invocationTarget>ShowSupportCaseFormAction</invocationTarget>
+            <invocationTargetType>apex</invocationTargetType>
+            <isConfirmationRequired>false</isConfirmationRequired>
+            <isIncludeInProgressIndicator>false</isIncludeInProgressIndicator>
+            <localDeveloperName>show_support_case_form</localDeveloperName>
+            <masterLabel>Show Support Case Form</masterLabel>
+        </localActions>
+        <localActions>
+            <fullName>create_support_case_179g7000002IkT5</fullName>
             <description>Shows the support case form. After the customer submits it, finds the customer&apos;s Contact by email or creates one, then creates a Case linked to that Contact and returns the case number and Id</description>
-            <developerName>create_support_case_179g7000002IjIU</developerName>
+            <developerName>create_support_case_179g7000002IkT5</developerName>
             <invocationTarget>CreateSupportCaseAction</invocationTarget>
             <invocationTargetType>apex</invocationTargetType>
-            <isConfirmationRequired>true</isConfirmationRequired>
+            <isConfirmationRequired>false</isConfirmationRequired>
             <isIncludeInProgressIndicator>true</isIncludeInProgressIndicator>
             <localDeveloperName>create_support_case</localDeveloperName>
             <masterLabel>Create Support Case</masterLabel>
@@ -123,48 +160,25 @@ If you do not know an answer, say so plainly. Do not guess.</description>
         <masterLabel>Case Intake</masterLabel>
         <pluginType>Topic</pluginType>
     </localTopics>
-    <localTopics>
-        <fullName>warranty_support_16jg7000001gfRB</fullName>
-        <canEscalate>false</canEscalate>
-        <description>Answers questions about iPhone warranty, AppleCare+ coverage, repairs and how to reach Apple support</description>
-        <developerName>warranty_support_16jg7000001gfRB</developerName>
-        <genAiPluginInstructions>
-            <description>You are the iPhone Help Assistant, an AI assistant that answers customer questions about Apple iPhone mobile phones.
-You are an AI, not a human, and you say so if asked.
-You are not Apple and do not speak on Apple&apos;s behalf. For orders, repairs or account issues, point customers to support.apple.com.
-Keep answers friendly, accurate and short (2 to 4 sentences).
-Prices and availability change. Give launch prices as a guide and tell customers to confirm current prices on apple.com.
-Never ask for passwords, Apple ID credentials, payment card numbers or other sensitive personal details.
-If you do not know an answer, say so plainly. Do not guess.</description>
-            <developerName>instruction0_179g7000002IjIT</developerName>
-            <language>en_US</language>
-            <masterLabel>instruction0_179g7000002IjIT</masterLabel>
-            <sortOrder>1</sortOrder>
-        </genAiPluginInstructions>
-        <language>en_US</language>
-        <localDeveloperName>warranty_support</localDeveloperName>
-        <masterLabel>Warranty Support</masterLabel>
-        <pluginType>Topic</pluginType>
-    </localTopics>
     <masterLabel>iPhone Help Assistant</masterLabel>
-    <plannerSurfaces>
-        <adaptiveResponseAllowed>true</adaptiveResponseAllowed>
-        <callRecordingAllowed>false</callRecordingAllowed>
-        <surface>SurfaceAction__Messaging</surface>
-        <surfaceType>Messaging</surfaceType>
-    </plannerSurfaces>
     <plannerSurfaces>
         <adaptiveResponseAllowed>true</adaptiveResponseAllowed>
         <callRecordingAllowed>false</callRecordingAllowed>
         <surface>SurfaceAction__CustomerWebClient</surface>
         <surfaceType>CustomerWebClient</surfaceType>
     </plannerSurfaces>
+    <plannerSurfaces>
+        <adaptiveResponseAllowed>true</adaptiveResponseAllowed>
+        <callRecordingAllowed>false</callRecordingAllowed>
+        <surface>SurfaceAction__Messaging</surface>
+        <surfaceType>Messaging</surfaceType>
+    </plannerSurfaces>
     <plannerType>Atlas__ConcurrentMultiAgentOrchestration</plannerType>
     <voiceDefinition>
-        <developerName>voiceConfig_16jg7000001gfRB</developerName>
+        <developerName>voiceConfig_16jg7000001gglR</developerName>
         <inboundFillerWordsBool>false</inboundFillerWordsBool>
         <inboundModel>sfdc_ai__Default_Nova_2_PhoneCall</inboundModel>
-        <label>voiceConfig_16jg7000001gfRB</label>
+        <label>voiceConfig_16jg7000001gglR</label>
         <languageCode>en_US</languageCode>
         <outboundModel>sfdc_ai__Default_Eleven_Flash_V2_5</outboundModel>
         <outboundSimilarity>0.75</outboundSimilarity>
