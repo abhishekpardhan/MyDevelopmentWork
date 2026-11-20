@@ -1,0 +1,5 @@
+{
+  "title" : "iPhone Support Case Result",
+  "description" : "Case number and case Id of a created iPhone support case",
+  "lightning:type" : "@apexClassType/c__SupportCaseResult"
+}

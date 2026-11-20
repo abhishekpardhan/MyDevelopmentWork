@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AiAgentDefinitionVersion xmlns="http://soap.sforce.com/2006/04/metadata">
+    <articleAnswersGPTEnabled>false</articleAnswersGPTEnabled>
+    <billingMode>ActionBased</billingMode>
+    <citationsEnabled>false</citationsEnabled>
+    <conversationVariables>
+        <dataType>Text</dataType>
+        <description>The agent instructions</description>
+        <developerName>AgentScriptInternal_agent_instructions</developerName>
+        <includeInPrompt>false</includeInPrompt>
+        <label>Agent Instructions</label>
+        <visibility>Internal</visibility>
+    </conversationVariables>
+    <conversationVariables>
+        <dataType>Text</dataType>
+        <description>The next topic to be visited</description>
+        <developerName>AgentScriptInternal_next_topic</developerName>
+        <includeInPrompt>false</includeInPrompt>
+        <label>Next Topic</label>
+        <visibility>Internal</visibility>
+    </conversationVariables>
+    <conversationVariables>
+        <dataType>Text</dataType>
+        <description>This variable may also be referred to as VerifiedCustomerId</description>
+        <developerName>VerifiedCustomerId</developerName>
+        <includeInPrompt>false</includeInPrompt>
+        <label>Verified Customer Id</label>
+        <visibility>Internal</visibility>
+    </conversationVariables>
+    <copilotPrimaryLanguage>en_US</copilotPrimaryLanguage>
+    <genAiPlannerName>First_Agent_v1</genAiPlannerName>
+    <isScriptCompatibleAgent>true</isScriptCompatibleAgent>
+    <knowledgeActionEnabled>false</knowledgeActionEnabled>
+    <knowledgeFallbackEnabled>false</knowledgeFallbackEnabled>
+    <planner>
+        <fullName>First_Agent_v1</fullName>
+        <agentGraphRef>20ZgK00000ALboP</agentGraphRef>
+        <description>First Agent description</description>
+        <localTopicLinks>
+            <genAiPluginName>activity_booking_support</genAiPluginName>
+        </localTopicLinks>
+        <localTopicLinks>
+            <genAiPluginName>agent_router</genAiPluginName>
+        </localTopicLinks>
+        <localTopicLinks>
+            <genAiPluginName>ambiguous_question</genAiPluginName>
+        </localTopicLinks>
+        <localTopicLinks>
+            <genAiPluginName>escalation</genAiPluginName>
+        </localTopicLinks>
+        <localTopicLinks>
+            <genAiPluginName>local_area_recommendations</genAiPluginName>
+        </localTopicLinks>
+        <localTopicLinks>
+            <genAiPluginName>off_topic</genAiPluginName>
+        </localTopicLinks>
+        <localTopicLinks>
+            <genAiPluginName>resort_navigation_assistance</genAiPluginName>
+        </localTopicLinks>
+        <localTopicLinks>
+            <genAiPluginName>room_service_requests</genAiPluginName>
+        </localTopicLinks>
+        <localTopics>
+            <canEscalate>false</canEscalate>
+            <description>Help guests book spa treatments, excursions, and other activities.</description>
+            <genAiPluginInstructions>
+                <description>You are an AI Agent.</description>
+                <developerName>instruction0_179gK000002YAIO</developerName>
+                <language>en_US</language>
+                <masterLabel>instruction0_179gK000002YAIO</masterLabel>
+                <sortOrder>1</sortOrder>
+            </genAiPluginInstructions>
+            <language>en_US</language>
+            <localDeveloperName>activity_booking_support</localDeveloperName>
+            <masterLabel>Activity Booking Support</masterLabel>
+            <pluginType>Topic</pluginType>
+        </localTopics>
+        <localTopics>
+            <canEscalate>false</canEscalate>
+            <description>Welcome the user and determine the appropriate subagent based on user input</description>
+            <genAiPluginInstructions>
+                <description>You are an AI Agent.</description>
+                <developerName>instruction0_179gK000002YAIN</developerName>
+                <language>en_US</language>
+                <masterLabel>instruction0_179gK000002YAIN</masterLabel>
+                <sortOrder>1</sortOrder>
+            </genAiPluginInstructions>
+            <language>en_US</language>
+            <localDeveloperName>agent_router</localDeveloperName>
+            <masterLabel>Agent Router</masterLabel>
+            <pluginType>Topic</pluginType>
+        </localTopics>
+        <localTopics>
+            <canEscalate>false</canEscalate>
+            <description>Redirect conversation to relevant topics when user request is too ambiguous</description>
+            <genAiPluginInstructions>
+                <description>You are an AI Agent.</description>
+                <developerName>instruction0_179gK000002YAIR</developerName>
+                <language>en_US</language>
+                <masterLabel>instruction0_179gK000002YAIR</masterLabel>
+                <sortOrder>1</sortOrder>
+            </genAiPluginInstructions>
+            <language>en_US</language>
+            <localDeveloperName>ambiguous_question</localDeveloperName>
+            <masterLabel>Ambiguous Question</masterLabel>
+            <pluginType>Topic</pluginType>
+        </localTopics>
+        <localTopics>
+            <canEscalate>false</canEscalate>
+            <description>Handles requests from users who want to transfer or escalate their conversation to a live human agent.</description>
+            <genAiPluginInstructions>
+                <description>You are an AI Agent.</description>
+                <developerName>instruction0_179gK000002YAIP</developerName>
+                <language>en_US</language>
+                <masterLabel>instruction0_179gK000002YAIP</masterLabel>
+                <sortOrder>1</sortOrder>
+            </genAiPluginInstructions>
+            <language>en_US</language>
+            <localDeveloperName>escalation</localDeveloperName>
+            <masterLabel>Escalation</masterLabel>
+            <pluginType>Topic</pluginType>
+        </localTopics>
+        <localTopics>
+            <canEscalate>false</canEscalate>
+            <description>Offer personalized suggestions for nearby attractions and dining.</description>
+            <genAiPluginInstructions>
+                <description>You are an AI Agent.</description>
+                <developerName>instruction0_179gK000002YAIS</developerName>
+                <language>en_US</language>
+                <masterLabel>instruction0_179gK000002YAIS</masterLabel>
+                <sortOrder>1</sortOrder>
+            </genAiPluginInstructions>
+            <language>en_US</language>
+            <localDeveloperName>local_area_recommendations</localDeveloperName>
+            <masterLabel>Local Area Recommendations</masterLabel>
+            <pluginType>Topic</pluginType>
+        </localTopics>
+        <localTopics>
+            <canEscalate>false</canEscalate>
+            <description>Redirect conversation to relevant topics when user request goes off-topic</description>
+            <genAiPluginInstructions>
+                <description>You are an AI Agent.</description>
+                <developerName>instruction0_179gK000002YAIM</developerName>
+                <language>en_US</language>
+                <masterLabel>instruction0_179gK000002YAIM</masterLabel>
+                <sortOrder>1</sortOrder>
+            </genAiPluginInstructions>
+            <language>en_US</language>
+            <localDeveloperName>off_topic</localDeveloperName>
+            <masterLabel>Off Topic</masterLabel>
+            <pluginType>Topic</pluginType>
+        </localTopics>
+        <localTopics>
+            <canEscalate>false</canEscalate>
+            <description>Provide directions and information about resort facilities.</description>
+            <genAiPluginInstructions>
+                <description>You are an AI Agent.</description>
+                <developerName>instruction0_179gK000002YAIQ</developerName>
+                <language>en_US</language>
+                <masterLabel>instruction0_179gK000002YAIQ</masterLabel>
+                <sortOrder>1</sortOrder>
+            </genAiPluginInstructions>
+            <language>en_US</language>
+            <localDeveloperName>resort_navigation_assistance</localDeveloperName>
+            <masterLabel>Resort Navigation Assistance</masterLabel>
+            <pluginType>Topic</pluginType>
+        </localTopics>
+        <localTopics>
+            <canEscalate>false</canEscalate>
+            <description>Assist guests in ordering food and amenities to their rooms.</description>
+            <genAiPluginInstructions>
+                <description>You are an AI Agent.</description>
+                <developerName>instruction0_179gK000002YAIL</developerName>
+                <language>en_US</language>
+                <masterLabel>instruction0_179gK000002YAIL</masterLabel>
+                <sortOrder>1</sortOrder>
+            </genAiPluginInstructions>
+            <language>en_US</language>
+            <localDeveloperName>room_service_requests</localDeveloperName>
+            <masterLabel>Room Service Requests</masterLabel>
+            <pluginType>Topic</pluginType>
+        </localTopics>
+        <masterLabel>First Agent</masterLabel>
+        <plannerType>Atlas__ConcurrentMultiAgentOrchestration</plannerType>
+    </planner>
+    <smallTalkEnabled>false</smallTalkEnabled>
+    <staticPromptsEnabled>false</staticPromptsEnabled>
+    <status>Inactive</status>
+    <stopRecPrompts>false</stopRecPrompts>
+    <surfacesEnabled>false</surfacesEnabled>
+    <toneType>Casual</toneType>
+    <version>1</version>
+    <welcomeMessage>Hi, I&apos;m an AI assistant. How can I help you?</welcomeMessage>
+</AiAgentDefinitionVersion>

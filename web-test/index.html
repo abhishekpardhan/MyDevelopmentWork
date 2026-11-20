@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Agent Chat Test</title>
+  <style>
+    body { font-family: system-ui, sans-serif; margin: 0; padding: 40px 16px; background: #f4f6f9; color: #1b1f24; }
+    main { max-width: 640px; margin: 0 auto; background: #fff; border-radius: 8px; padding: 24px; box-shadow: 0 1px 3px rgba(0,0,0,.1); }
+    h1 { margin-top: 0; font-size: 22px; }
+    #status { padding: 10px 12px; border-radius: 6px; background: #fff7e0; font-size: 14px; }
+    #status.ok { background: #e6f6ea; }
+    #status.err { background: #fde8e8; }
+    code { background: #eef0f3; padding: 1px 4px; border-radius: 3px; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Embedded Messaging test page</h1>
+    <p>Deployment: <code>Salesforce_Agent_V2</code> (WebV2)</p>
+    <p id="status">Loading the chat bootstrap script…</p>
+    <p>When it loads, a chat button appears in the bottom-right corner. Click it to talk to the agent.</p>
+  </main>
+
+  <script>
+    function setStatus(msg, cls) {
+      var el = document.getElementById('status');
+      el.textContent = msg;
+      el.className = cls || '';
+    }
+    window.addEventListener('onEmbeddedMessagingReady', function () {
+      setStatus('Chat is ready. Use the button in the bottom-right corner.', 'ok');
+    });
+  </script>
+
+  <!-- Embedded Messaging Deployment (WebV2) -->
+  <script type='text/javascript'>
+    function initEmbeddedMessaging() {
+      try {
+        embeddedservice_bootstrap.settings.language = 'en_US';
+        embeddedservice_bootstrap.init(
+          '00Dg700000NauPq',
+          'Salesforce_Agent_V2',
+          'https://orgfarm-2ce9f16d2b-dev-ed.develop.my.site.com/ESWSalesforceAgentV21778610096367',
+          {
+            scrt2URL: 'https://orgfarm-2ce9f16d2b-dev-ed.develop.my.salesforce-scrt.com'
+          }
+        );
+        setStatus('Script loaded, starting chat…');
+      } catch (err) {
+        console.error('Error loading Embedded Messaging: ', err);
+        setStatus('Error starting chat: ' + err.message + ' (see browser console)', 'err');
+      }
+    }
+  </script>
+  <script type='text/javascript'
+    src='https://orgfarm-2ce9f16d2b-dev-ed.develop.my.site.com/ESWSalesforceAgentV21778610096367/assets/js/bootstrap.min.js'
+    onload='initEmbeddedMessaging()'
+    onerror="setStatus('Could not load bootstrap.min.js — check the site URL and that the deployment is published.', 'err')"></script>
+</body>
+</html>

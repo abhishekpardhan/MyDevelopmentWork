@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AiEvaluationDefinition xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Routing tests for First_Agent</description>
+    <name>First_Agent_Test</name>
+    <subjectName>First_Agent</subjectName>
+    <subjectType>AGENT</subjectType>
+
+    <!-- 1. Escalation -->
+    <testCase>
+        <number>1</number>
+        <inputs>
+            <utterance>I want to talk to a live human agent</utterance>
+        </inputs>
+        <expectation>
+            <name>topic_sequence_match</name>
+            <expectedValue>escalation</expectedValue>
+        </expectation>
+    </testCase>
+
+    <!-- 2. Off topic -->
+    <testCase>
+        <number>2</number>
+        <inputs>
+            <utterance>What is the capital of France?</utterance>
+        </inputs>
+        <expectation>
+            <name>topic_sequence_match</name>
+            <expectedValue>off_topic</expectedValue>
+        </expectation>
+        <expectation>
+            <name>action_sequence_match</name>
+            <expectedValue>[]</expectedValue>
+        </expectation>
+    </testCase>
+
+    <!-- 3. Ambiguous question -->
+    <testCase>
+        <number>3</number>
+        <inputs>
+            <utterance>I need help with something</utterance>
+        </inputs>
+        <expectation>
+            <name>topic_sequence_match</name>
+            <expectedValue>ambiguous_question</expectedValue>
+        </expectation>
+        <expectation>
+            <name>action_sequence_match</name>
+            <expectedValue>[]</expectedValue>
+        </expectation>
+    </testCase>
+
+    <!-- 4. Room service -->
+    <testCase>
+        <number>4</number>
+        <inputs>
+            <utterance>Can you send a club sandwich and a bottle of water to my room?</utterance>
+        </inputs>
+        <expectation>
+            <name>topic_sequence_match</name>
+            <expectedValue>room_service_requests</expectedValue>
+        </expectation>
+    </testCase>
+
+    <!-- 5. Resort navigation -->
+    <testCase>
+        <number>5</number>
+        <inputs>
+            <utterance>How do I get to the pool from the main lobby?</utterance>
+        </inputs>
+        <expectation>
+            <name>topic_sequence_match</name>
+            <expectedValue>resort_navigation_assistance</expectedValue>
+        </expectation>
+    </testCase>
+
+    <!-- 6. Activity booking -->
+    <testCase>
+        <number>6</number>
+        <inputs>
+            <utterance>I'd like to book a spa massage for tomorrow afternoon</utterance>
+        </inputs>
+        <expectation>
+            <name>topic_sequence_match</name>
+            <expectedValue>activity_booking_support</expectedValue>
+        </expectation>
+    </testCase>
+
+    <!-- 7. Local recommendations -->
+    <testCase>
+        <number>7</number>
+        <inputs>
+            <utterance>Can you recommend a good seafood restaurant near the resort?</utterance>
+        </inputs>
+        <expectation>
+            <name>topic_sequence_match</name>
+            <expectedValue>local_area_recommendations</expectedValue>
+        </expectation>
+    </testCase>
+</AiEvaluationDefinition>

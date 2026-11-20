@@ -1,0 +1,5 @@
+{
+  "title" : "iPhone Support Case Form",
+  "description" : "Customer details and issue description for an iPhone support case",
+  "lightning:type" : "@apexClassType/c__SupportCaseRequest"
+}

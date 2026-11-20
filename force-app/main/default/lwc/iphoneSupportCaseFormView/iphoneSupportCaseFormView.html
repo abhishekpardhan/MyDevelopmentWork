@@ -1,0 +1,64 @@
+<template>
+    <div class="slds-box slds-theme_default slds-p-around_small">
+        <template lwc:if={caseNumber}>
+            <p class="slds-text-heading_small slds-m-bottom_x-small">Your support case was created</p>
+            <dl class="slds-list_horizontal slds-wrap">
+                <dt class="slds-item_label slds-text-color_weak">Case Number</dt>
+                <dd class="slds-item_detail slds-text-title_bold">{caseNumber}</dd>
+            </dl>
+            <p class="slds-m-top_x-small slds-text-body_small">Keep your case number for follow-up.</p>
+        </template>
+        <template lwc:else>
+            <p class="slds-text-heading_small slds-m-bottom_small">Report an iPhone issue</p>
+            <lightning-input
+                label="Full Name"
+                name="customerName"
+                value={form.customerName}
+                required
+                max-length="120"
+                disabled={isSubmitting}
+                onchange={handleChange}
+            ></lightning-input>
+            <lightning-input
+                type="email"
+                label="Email"
+                name="customerEmail"
+                value={form.customerEmail}
+                required
+                message-when-type-mismatch="Enter an email like name@domain.com."
+                disabled={isSubmitting}
+                onchange={handleChange}
+            ></lightning-input>
+            <lightning-input
+                type="tel"
+                label="Mobile Number"
+                name="customerMobile"
+                value={form.customerMobile}
+                required
+                max-length="40"
+                disabled={isSubmitting}
+                onchange={handleChange}
+            ></lightning-input>
+            <lightning-textarea
+                label="Issue Description"
+                name="issueDescription"
+                value={form.issueDescription}
+                required
+                max-length="32000"
+                placeholder="What is happening, and which iPhone model?"
+                disabled={isSubmitting}
+                onchange={handleChange}
+            ></lightning-textarea>
+            <template lwc:if={errorMessage}>
+                <p class="slds-m-top_x-small slds-text-color_error" role="alert">{errorMessage}</p>
+            </template>
+            <lightning-button
+                class="slds-m-top_small"
+                variant="brand"
+                label={submitLabel}
+                disabled={isSubmitting}
+                onclick={handleSubmit}
+            ></lightning-button>
+        </template>
+    </div>
+</template>

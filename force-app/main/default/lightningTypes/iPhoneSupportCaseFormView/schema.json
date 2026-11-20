@@ -1,0 +1,5 @@
+{
+  "title" : "iPhone Support Case Form View",
+  "description" : "Editable support case form shown in the chat; the customer submits it to create a case",
+  "lightning:type" : "@apexClassType/c__SupportCaseFormView"
+}

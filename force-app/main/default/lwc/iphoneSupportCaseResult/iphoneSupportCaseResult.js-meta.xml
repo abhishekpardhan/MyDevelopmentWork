@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>66.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>iPhone Support Case Result</masterLabel>
+    <description>Agentforce output renderer that shows the created case number and case Id.</description>
+    <targets>
+        <target>lightning__AgentforceOutput</target>
+    </targets>
+</LightningComponentBundle>

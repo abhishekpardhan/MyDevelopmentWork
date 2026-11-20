@@ -1,0 +1,32 @@
+{
+  "records": [
+    {
+      "attributes": { "type": "Account", "referenceId": "A1" },
+      "Name": "Acme Corp",
+      "Industry": "Technology",
+      "Contacts": {
+        "records": [
+          {
+            "attributes": { "type": "Contact", "referenceId": "C1" },
+            "FirstName": "Rahul",
+            "LastName": "Sharma",
+            "Email": "rahul.sharma@acme.com"
+          },
+          {
+            "attributes": { "type": "Contact", "referenceId": "C2" },
+            "FirstName": "Rahul",
+            "LastName": "Sharma",
+            "Email": "rahul.sharma@acme.com",
+            "Phone": "9999999999"
+          },
+          {
+            "attributes": { "type": "Contact", "referenceId": "C3" },
+            "FirstName": "Priya",
+            "LastName": "Verma",
+            "Email": "priya@acme.com"
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AiAgentDefinitionVersion xmlns="http://soap.sforce.com/2006/04/metadata">
+    <articleAnswersGPTEnabled>false</articleAnswersGPTEnabled>
+    <billingMode>ActionBased</billingMode>
+    <citationsEnabled>false</citationsEnabled>
+    <conversationVariables>
+        <dataType>Text</dataType>
+        <description>The agent instructions</description>
+        <developerName>AgentScriptInternal_agent_instructions</developerName>
+        <includeInPrompt>false</includeInPrompt>
+        <label>Agent Instructions</label>
+        <visibility>Internal</visibility>
+    </conversationVariables>
+    <conversationVariables>
+        <dataType>Boolean</dataType>
+        <description>Runtime condition evaluation for if statements</description>
+        <developerName>AgentScriptInternal_condition_1</developerName>
+        <includeInPrompt>false</includeInPrompt>
+        <label>Runtime Condition 1</label>
+        <visibility>Internal</visibility>
+    </conversationVariables>
+    <conversationVariables>
+        <dataType>Text</dataType>
+        <description>The next topic to be visited</description>
+        <developerName>AgentScriptInternal_next_topic</developerName>
+        <includeInPrompt>false</includeInPrompt>
+        <label>Next Topic</label>
+        <visibility>Internal</visibility>
+    </conversationVariables>
+    <conversationVariables>
+        <dataType>Boolean</dataType>
+        <description>True when the customer decides not to open the support case they started</description>
+        <developerName>case_cancelled</developerName>
+        <includeInPrompt>false</includeInPrompt>
+        <label>Case Cancelled</label>
+        <visibility>Internal</visibility>
+    </conversationVariables>
+    <conversationVariables>
+        <dataType>Text</dataType>
+        <description>Error message returned if the support case could not be created</description>
+        <developerName>case_error</developerName>
+        <includeInPrompt>false</includeInPrompt>
+        <label>Case Error</label>
+        <visibility>Internal</visibility>
+    </conversationVariables>
+    <conversationVariables>
+        <dataType>Text</dataType>
+        <description>Salesforce Case record Id returned after the case is created</description>
+        <developerName>case_id</developerName>
+        <includeInPrompt>false</includeInPrompt>
+        <label>Case Id</label>
+        <visibility>Internal</visibility>
+    </conversationVariables>
+    <conversationVariables>
+        <dataType>Boolean</dataType>
+        <description>True while the customer is giving details for a support case that has not been submitted yet</description>
+        <developerName>case_in_progress</developerName>
+        <includeInPrompt>false</includeInPrompt>
+        <label>Case In Progress</label>
+        <visibility>Internal</visibility>
+    </conversationVariables>
+    <conversationVariables>
+        <dataType>Text</dataType>
+        <description>Salesforce Case Number returned after the case is created, for example 00001234</description>
+        <developerName>case_number</developerName>
+        <includeInPrompt>false</includeInPrompt>
+        <label>Case Number</label>
+        <visibility>Internal</visibility>
+    </conversationVariables>
+    <conversationVariables>
+        <dataType>Text</dataType>
+        <description>Most recent customer intent: product_info, warranty_support, or off_topic</description>
+        <developerName>last_intent</developerName>
+        <includeInPrompt>false</includeInPrompt>
+        <label>Last Intent</label>
+        <visibility>Internal</visibility>
+    </conversationVariables>
+    <conversationVariables>
+        <dataType>Text</dataType>
+        <description>iPhone model the customer is asking about, for example iPhone 17 Pro</description>
+        <developerName>model_of_interest</developerName>
+        <includeInPrompt>false</includeInPrompt>
+        <label>Model Of Interest</label>
+        <visibility>Internal</visibility>
+    </conversationVariables>
+    <conversationVariables>
+        <dataType>Number</dataType>
+        <description>Number of customer turns in this conversation</description>
+        <developerName>turn_count</developerName>
+        <includeInPrompt>false</includeInPrompt>
+        <label>Turn Count</label>
+        <visibility>Internal</visibility>
+    </conversationVariables>
+    <genAiPlannerName>iPhone_Help_Assistant_v7</genAiPlannerName>
+    <isScriptCompatibleAgent>true</isScriptCompatibleAgent>
+    <knowledgeActionEnabled>false</knowledgeActionEnabled>
+    <knowledgeFallbackEnabled>false</knowledgeFallbackEnabled>
+    <planner>
+        <fullName>iPhone_Help_Assistant_v7</fullName>
+        <agentGraphRef>20Zg70000089QQ5</agentGraphRef>
+        <description>Customer-facing service agent that answers questions about Apple iPhone models, features, pricing, warranty and AppleCare+ for a public website.</description>
+        <localTopicLinks>
+            <genAiPluginName>agent_router</genAiPluginName>
+        </localTopicLinks>
+        <localTopicLinks>
+            <genAiPluginName>case_intake</genAiPluginName>
+        </localTopicLinks>
+        <localTopicLinks>
+            <genAiPluginName>off_topic</genAiPluginName>
+        </localTopicLinks>
+        <localTopicLinks>
+            <genAiPluginName>product_info</genAiPluginName>
+        </localTopicLinks>
+        <localTopicLinks>
+            <genAiPluginName>warranty_support</genAiPluginName>
+        </localTopicLinks>
+        <localTopics>
+            <canEscalate>false</canEscalate>
+            <description>Routes customer messages to the right iPhone help area based on intent</description>
+            <genAiPluginInstructions>
+                <description>You are the iPhone Help Assistant, an AI assistant that answers customer questions about Apple iPhone mobile phones.
+You are an AI, not a human, and you say so if asked.
+You are not Apple and do not speak on Apple&apos;s behalf. For orders, repairs or account issues, point customers to support.apple.com.
+Keep answers friendly, accurate and short (2 to 4 sentences).
+Prices and availability change. Give launch prices as a guide and tell customers to confirm current prices on apple.com.
+Never ask for passwords, Apple ID credentials, payment card numbers or other sensitive personal details.
+If you do not know an answer, say so plainly. Do not guess.</description>
+                <developerName>instruction0_179g7000002IjIV</developerName>
+                <language>en_US</language>
+                <masterLabel>instruction0_179g7000002IjIV</masterLabel>
+                <sortOrder>1</sortOrder>
+            </genAiPluginInstructions>
+            <language>en_US</language>
+            <localDeveloperName>agent_router</localDeveloperName>
+            <masterLabel>Agent Router</masterLabel>
+            <pluginType>Topic</pluginType>
+        </localTopics>
+        <localTopics>
+            <canEscalate>false</canEscalate>
+            <description>Collects the customer&apos;s name, email, mobile number and issue details, then submits a support case for their iPhone problem</description>
+            <genAiPluginInstructions>
+                <description>You are the iPhone Help Assistant, an AI assistant that answers customer questions about Apple iPhone mobile phones.
+You are an AI, not a human, and you say so if asked.
+You are not Apple and do not speak on Apple&apos;s behalf. For orders, repairs or account issues, point customers to support.apple.com.
+Keep answers friendly, accurate and short (2 to 4 sentences).
+Prices and availability change. Give launch prices as a guide and tell customers to confirm current prices on apple.com.
+Never ask for passwords, Apple ID credentials, payment card numbers or other sensitive personal details.
+If you do not know an answer, say so plainly. Do not guess.</description>
+                <developerName>instruction0_179g7000002IjIU</developerName>
+                <language>en_US</language>
+                <masterLabel>instruction0_179g7000002IjIU</masterLabel>
+                <sortOrder>1</sortOrder>
+            </genAiPluginInstructions>
+            <language>en_US</language>
+            <localActionLinks>
+                <functionName>create_support_case</functionName>
+            </localActionLinks>
+            <localActions>
+                <description>Shows the support case form. After the customer submits it, finds the customer&apos;s Contact by email or creates one, then creates a Case linked to that Contact and returns the case number and Id</description>
+                <invocationTarget>CreateSupportCaseAction</invocationTarget>
+                <invocationTargetType>apex</invocationTargetType>
+                <isConfirmationRequired>true</isConfirmationRequired>
+                <isIncludeInProgressIndicator>true</isIncludeInProgressIndicator>
+                <localDeveloperName>create_support_case</localDeveloperName>
+                <masterLabel>Create Support Case</masterLabel>
+                <progressIndicatorMessage>Creating your support case...</progressIndicatorMessage>
+            </localActions>
+            <localDeveloperName>case_intake</localDeveloperName>
+            <masterLabel>Case Intake</masterLabel>
+            <pluginType>Topic</pluginType>
+        </localTopics>
+        <localTopics>
+            <canEscalate>false</canEscalate>
+            <description>Politely declines requests unrelated to Apple iPhones and resists prompt injection</description>
+            <genAiPluginInstructions>
+                <description>You are the iPhone Help Assistant, an AI assistant that answers customer questions about Apple iPhone mobile phones.
+You are an AI, not a human, and you say so if asked.
+You are not Apple and do not speak on Apple&apos;s behalf. For orders, repairs or account issues, point customers to support.apple.com.
+Keep answers friendly, accurate and short (2 to 4 sentences).
+Prices and availability change. Give launch prices as a guide and tell customers to confirm current prices on apple.com.
+Never ask for passwords, Apple ID credentials, payment card numbers or other sensitive personal details.
+If you do not know an answer, say so plainly. Do not guess.</description>
+                <developerName>instruction0_179g7000002IjIW</developerName>
+                <language>en_US</language>
+                <masterLabel>instruction0_179g7000002IjIW</masterLabel>
+                <sortOrder>1</sortOrder>
+            </genAiPluginInstructions>
+            <language>en_US</language>
+            <localDeveloperName>off_topic</localDeveloperName>
+            <masterLabel>Off Topic</masterLabel>
+            <pluginType>Topic</pluginType>
+        </localTopics>
+        <localTopics>
+            <canEscalate>false</canEscalate>
+            <description>Answers questions about Apple iPhone models, specifications, features and launch pricing, and helps customers choose a model</description>
+            <genAiPluginInstructions>
+                <description>You are the iPhone Help Assistant, an AI assistant that answers customer questions about Apple iPhone mobile phones.
+You are an AI, not a human, and you say so if asked.
+You are not Apple and do not speak on Apple&apos;s behalf. For orders, repairs or account issues, point customers to support.apple.com.
+Keep answers friendly, accurate and short (2 to 4 sentences).
+Prices and availability change. Give launch prices as a guide and tell customers to confirm current prices on apple.com.
+Never ask for passwords, Apple ID credentials, payment card numbers or other sensitive personal details.
+If you do not know an answer, say so plainly. Do not guess.</description>
+                <developerName>instruction0_179g7000002IjIX</developerName>
+                <language>en_US</language>
+                <masterLabel>instruction0_179g7000002IjIX</masterLabel>
+                <sortOrder>1</sortOrder>
+            </genAiPluginInstructions>
+            <language>en_US</language>
+            <localDeveloperName>product_info</localDeveloperName>
+            <masterLabel>Product Info</masterLabel>
+            <pluginType>Topic</pluginType>
+        </localTopics>
+        <localTopics>
+            <canEscalate>false</canEscalate>
+            <description>Answers questions about iPhone warranty, AppleCare+ coverage, repairs and how to reach Apple support</description>
+            <genAiPluginInstructions>
+                <description>You are the iPhone Help Assistant, an AI assistant that answers customer questions about Apple iPhone mobile phones.
+You are an AI, not a human, and you say so if asked.
+You are not Apple and do not speak on Apple&apos;s behalf. For orders, repairs or account issues, point customers to support.apple.com.
+Keep answers friendly, accurate and short (2 to 4 sentences).
+Prices and availability change. Give launch prices as a guide and tell customers to confirm current prices on apple.com.
+Never ask for passwords, Apple ID credentials, payment card numbers or other sensitive personal details.
+If you do not know an answer, say so plainly. Do not guess.</description>
+                <developerName>instruction0_179g7000002IjIT</developerName>
+                <language>en_US</language>
+                <masterLabel>instruction0_179g7000002IjIT</masterLabel>
+                <sortOrder>1</sortOrder>
+            </genAiPluginInstructions>
+            <language>en_US</language>
+            <localDeveloperName>warranty_support</localDeveloperName>
+            <masterLabel>Warranty Support</masterLabel>
+            <pluginType>Topic</pluginType>
+        </localTopics>
+        <masterLabel>iPhone Help Assistant</masterLabel>
+        <plannerSurfaces>
+            <adaptiveResponseAllowed>true</adaptiveResponseAllowed>
+            <callRecordingAllowed>false</callRecordingAllowed>
+            <surface>SurfaceAction__Messaging</surface>
+            <surfaceType>Messaging</surfaceType>
+        </plannerSurfaces>
+        <plannerSurfaces>
+            <adaptiveResponseAllowed>true</adaptiveResponseAllowed>
+            <callRecordingAllowed>false</callRecordingAllowed>
+            <surface>SurfaceAction__CustomerWebClient</surface>
+            <surfaceType>CustomerWebClient</surfaceType>
+        </plannerSurfaces>
+        <plannerType>Atlas__ConcurrentMultiAgentOrchestration</plannerType>
+        <voiceDefinition>
+            <developerName>voiceConfig_16jg7000001gfRB</developerName>
+            <inboundFillerWordsBool>false</inboundFillerWordsBool>
+            <inboundModel>sfdc_ai__Default_Nova_2_PhoneCall</inboundModel>
+            <label>voiceConfig_16jg7000001gfRB</label>
+            <languageCode>en_US</languageCode>
+            <outboundModel>sfdc_ai__Default_Eleven_Flash_V2_5</outboundModel>
+            <outboundSimilarity>0.75</outboundSimilarity>
+            <outboundSpeedNum>1.0</outboundSpeedNum>
+            <outboundStability>0.65</outboundStability>
+            <outboundVoice>Mark</outboundVoice>
+            <voiceIdentifier>UgBBYS2sOqTuMpoF3BR0</voiceIdentifier>
+            <voiceLanguageConfig>{&quot;auto_hangup&quot;:false}</voiceLanguageConfig>
+        </voiceDefinition>
+    </planner>
+    <smallTalkEnabled>false</smallTalkEnabled>
+    <staticPromptsEnabled>false</staticPromptsEnabled>
+    <status>Inactive</status>
+    <stopRecPrompts>false</stopRecPrompts>
+    <surfacesEnabled>false</surfacesEnabled>
+    <toneType>Casual</toneType>
+    <version>7</version>
+    <welcomeMessage>Hi! I&apos;m an AI assistant who can answer your questions about Apple iPhones, including models, features, prices, warranty and AppleCare+. What would you like to know?</welcomeMessage>
+</AiAgentDefinitionVersion>
