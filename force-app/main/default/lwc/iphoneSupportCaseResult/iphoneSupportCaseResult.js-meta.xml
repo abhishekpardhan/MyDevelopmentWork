@@ -7,4 +7,9 @@
     <targets>
         <target>lightning__AgentforceOutput</target>
     </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__AgentforceOutput">
+            <sourceType name="c__iPhoneSupportCaseResult"/>
+        </targetConfig>
+    </targetConfigs>
 </LightningComponentBundle>

@@ -46,8 +46,6 @@ variables:
         description: "True when the customer decides not to open the support case they started"
     case_error: mutable string = ""
         description: "Error message returned if the support case could not be created"
-    case_form_shown: mutable boolean = False
-        description: "True after the support case form has been shown in the chat"
     VoiceCallId: linked string
         description: "This variable may also be referred to as Voice Call Id"
         source: @VoiceCall.Id
@@ -129,36 +127,21 @@ subagent case_intake:
                 | Do not submit another case unless the customer clearly asks to report a different problem.
             if @variables.case_number == "" and @variables.case_error != "":
                 | The last attempt to create the case did not succeed: {!@variables.case_error}
-                | Apologize and explain the problem in plain words. If a detail was missing or invalid, offer to open the form again with {!@actions.submit_support_case} so the customer can fix it. Otherwise suggest they try again later or contact support.apple.com. Do not invent a case number.
+                | Apologize and explain the problem in plain words. If a detail was missing or invalid, offer to show the form again with {!@actions.submit_support_case} so the customer can fix it. Otherwise suggest they try again later or contact support.apple.com. Do not invent a case number.
                 | If the customer no longer wants to open a case, call {!@actions.stop_case_intake} with case_cancelled set to True.
             if @variables.case_number == "" and @variables.case_error == "" and @variables.case_cancelled == False:
                 set @variables.case_in_progress = True
                 | If the customer clearly says they no longer want to open a case, or asks a real question unrelated to their case, call {!@actions.stop_case_intake} with case_cancelled set to True.
                 | Greetings or short messages such as "hi", "hello", "ok" or "?" are NOT a cancellation. Keep the case open and show the support case form again with {!@actions.submit_support_case}.
                 | Help the customer open a support case for their iPhone issue. The case needs four details: full name, email, mobile number, and issue description (what is wrong and which iPhone model if known).
-            if @variables.case_number == "" and @variables.case_error == "" and @variables.case_cancelled == False and @variables.case_form_shown == False:
-                | Call {!@actions.show_case_form} right away in this same turn to show the support case form. Do not ask the customer to type their details in chat first and do not ask whether they want the form.
-                | Pass any name, email, mobile number or issue description the customer already gave in this conversation so the form is pre-filled. Leave the others empty.
-                | After the form is shown, tell the customer in one short sentence to fill in the form and click Submit, and that their case number will appear on the form.
-            if @variables.case_number == "" and @variables.case_error == "" and @variables.case_cancelled == False and @variables.case_form_shown == True:
-                | The support case form is already shown in the chat. When the customer clicks Submit on the form, the case is created and the case number appears on the form itself.
-                | If the customer says they submitted the form, thank them, tell them to keep the case number shown on the form, and ask if there is anything else you can help with. Do NOT create another case.
-                | If the customer asks for the form again, call {!@actions.show_case_form} again.
-                | Only if the customer types all four details in chat and asks you to open the case for them, call {!@actions.submit_support_case} with caseRequest filled with all four details.
-                | If the customer declines the form, do not show it again unless they ask.
+                | Call {!@actions.submit_support_case} right away in this same turn to show the support case form. Pre-fill caseRequest with any name, email, mobile number or issue description the customer already gave. Leave unknown fields empty.
+                | Do not ask the customer to type their details first and do not ask whether they want the form. The customer reviews the form and confirms it to create the case.
+                | If the customer declines or cancels the form, do not show it again unless they ask.
             | After {!@actions.submit_support_case} runs, read its isSuccess, caseNumber and errorMessage outputs. Only say a case was opened when isSuccess is true AND caseNumber is not empty, and always quote that exact case number. If isSuccess is false or caseNumber is empty, the case was NOT created: say so, explain the errorMessage in plain words, and offer to show the form again. Never claim a case was opened without a case number.
             | Never ask for passwords, Apple ID credentials or payment card numbers.
         actions:
-            show_case_form: @actions.show_support_case_form
-                description: "Show the support case form in the chat. The customer fills in name, email, mobile number and issue description and clicks Submit to create the case."
-                available when @variables.case_number == ""
-                with customerName = ...
-                with customerEmail = ...
-                with customerMobile = ...
-                with issueDescription = ...
-                set @variables.case_form_shown = True
             submit_support_case: @actions.create_support_case
-                description: "Create the case directly from details the customer typed in chat (only when they typed all four details and asked you to open the case)"
+                description: "Show the support case form so the customer can enter and confirm their details, then create the case"
                 available when @variables.case_number == ""
                 with caseRequest = ...
                 set @variables.case_number = @outputs.caseNumber
@@ -172,30 +155,6 @@ subagent case_intake:
                 available when @variables.case_in_progress == False
 
     actions:
-        show_support_case_form:
-            description: "Shows an editable support case form in the chat, pre-filled with any details already known. The customer submits it to create the case."
-            label: "Show Support Case Form"
-            target: "apex://ShowSupportCaseFormAction"
-            require_user_confirmation: False
-            include_in_progress_indicator: False
-            inputs:
-                customerName: string
-                    description: "Customer's full name, only if they already gave it. Otherwise empty."
-                    is_required: False
-                customerEmail: string
-                    description: "Customer's email, only if they already gave it. Otherwise empty."
-                    is_required: False
-                customerMobile: string
-                    description: "Customer's mobile number, only if they already gave it. Otherwise empty."
-                    is_required: False
-                issueDescription: string
-                    description: "The problem and iPhone model, if the customer already described it. Otherwise empty."
-                    is_required: False
-            outputs:
-                caseForm: object
-                    complex_data_type_name: "c__iPhoneSupportCaseFormView"
-                    description: "The support case form shown to the customer"
-                    is_displayable: True
         create_support_case:
             description: "Shows the support case form. After the customer submits it, finds the customer's Contact by email or creates one, then creates a Case linked to that Contact and returns the case number and Id"
             label: "Create Support Case"

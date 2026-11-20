@@ -4,6 +4,7 @@
  * iphoneSupportCaseFormView LWC (an editable form with a Submit button).
  * The fields hold any details the agent already collected, used to pre-fill the form.
  */
+@JsonAccess(serializable='always' deserializable='always')
 public class SupportCaseFormView {
     @AuraEnabled
     public String customerName;

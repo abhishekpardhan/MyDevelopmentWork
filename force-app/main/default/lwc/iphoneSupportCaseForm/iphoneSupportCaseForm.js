@@ -37,24 +37,12 @@ export default class IphoneSupportCaseForm extends LightningElement {
         this.form = next;
     }
 
-    connectedCallback() {
-        // Report the initial (possibly pre-filled) value so the host always has a value to submit.
-        this.notify();
-    }
-
     handleChange(event) {
         event.stopPropagation();
-        const value = event.detail.value;
-        this.form = { ...this.form, [event.target.name]: typeof value === 'string' ? value.trim() : value };
-        this.notify();
-    }
-
-    notify() {
+        this.form = { ...this.form, [event.target.name]: event.detail.value };
         this.dispatchEvent(
             new CustomEvent('valuechange', {
-                detail: { value: { ...this.form } },
-                bubbles: true,
-                composed: true
+                detail: { value: { ...this.form } }
             })
         );
     }
